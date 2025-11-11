@@ -1,0 +1,13 @@
+<div>
+    <h1>New Departamento</h1>
+    <form #departForm="ngForm">
+        <label>ID Departamento: </label>
+        <input type="text" name="cajaId" #cajaId class="form-control">
+        <label>Nombre: </label>
+        <input type="text" name="cajaNombre" #cajaNombre class="form-control">
+        <label>Localidad: </label>
+        <input type="text" name="cajaLocalidad" #cajaLocalidad class="form-control">
+        <br>
+        <button (click)="insertDepartamento()" class="btn btn-info">Create Departamento</button>
+    </form>
+</div>

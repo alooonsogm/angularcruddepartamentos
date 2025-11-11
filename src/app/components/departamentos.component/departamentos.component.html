@@ -1,0 +1,29 @@
+<div>
+    <h1>Departamentos</h1>
+    @if (departamentos) {
+        <table class="table">
+            <thead>
+                <th>ID Departamento</th>
+                <th>Nombre</th>
+                <th>Localidad</th>
+                <th></th>
+            </thead>
+            <tbody>
+                @for (depart of departamentos; track depart) {
+                    <tr>
+                        <td>{{depart.numero}}</td>
+                        <td>{{depart.nombre}}</td>
+                        <td>{{depart.localidad}}</td>
+                        <td>
+                            <a [routerLink]="['/details/' + depart.numero + '/' + depart.nombre + '/' + depart.localidad]" class="btn btn-dark">
+                                Details
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    } @else {
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/007/358/588/small_2x/loading-white-circle-icon-animation-on-black-background-seamless-looping-animated-background-free-video.jpg" alt="foto" style="width: 300px; height: 200px;">
+    }
+</div>
