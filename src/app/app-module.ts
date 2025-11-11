@@ -1,8 +1,7 @@
-import { routing, appRoutingProvider } from './app.routing';
-
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { MenuComponent } from './components/menu.component/menu.component';
 import { DepartamentosComponent } from './components/departamentos.component/departamentos.component';
@@ -22,12 +21,11 @@ import { DetailsComponent } from './components/details.component/details.compone
   ],
   imports: [
     BrowserModule,
-    routing,
+    AppRoutingModule,
     FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    appRoutingProvider,
     provideHttpClient(),
     SeviceDepartamentos
   ],
