@@ -18,6 +18,12 @@
                             <a [routerLink]="['/details/' + depart.numero + '/' + depart.nombre + '/' + depart.localidad]" class="btn btn-dark">
                                 Details
                             </a>
+                            <a [routerLink]="['/update/' + depart.numero]" class="btn btn-success">
+                                Edit
+                            </a>
+                            <button class="btn btn-danger" (click)="deleteDepartamento(depart.numero)">
+                                Delete
+                            </button>
                         </td>
                     </tr>
                 }

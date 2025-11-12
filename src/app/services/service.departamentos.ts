@@ -31,4 +31,30 @@ export class SeviceDepartamentos {
 
         return this._http.post(urlDepart + request, departJson, {headers: header});
     }
+
+    getDepartamentoPorId(idDepart: number): Observable<Departamento> {
+        let urlDepart = environment.urlApiDepart;
+        let request = "api/Departamentos/" + idDepart;
+
+        return this._http.get<Departamento>(urlDepart + request);
+    }
+
+    updateDepartamento(departamento: Departamento): Observable<any> {
+        let departJson = JSON.stringify(departamento);
+
+        let header = new HttpHeaders();
+        header = header.set("Content-Type", "application/json");
+
+        let urlDepart = environment.urlApiDepart;
+        let request = "api/Departamentos";
+
+        return this._http.put(urlDepart + request, departJson, {headers: header});
+    }
+
+    deleteDepartamento(idDepart: number): Observable<any> {
+        let urlDepart = environment.urlApiDepart;
+        let request = "api/Departamentos/" + idDepart;
+
+        return this._http.delete(urlDepart + request);
+    }
 }

@@ -1,3 +1,12 @@
 <div>
     <h1>Details</h1>
+    <a [routerLink]="['/']" class="btn btn-info">Volver al Home</a>
+    <br><br>
+    @if (departamento) {
+        <ul class="list-group">
+            <li class="list-group-item">ID departamento: {{departamento.numero}}</li>
+            <li class="list-group-item">Nombre: {{departamento.nombre}}</li>
+            <li class="list-group-item">Localidad: {{departamento.localidad}}</li>
+        </ul>
+    }
 </div>
